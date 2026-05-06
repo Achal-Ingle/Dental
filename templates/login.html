@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <!-- <form action="login" method="post">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="username"><br>
+        <input type="password" name="password" placeholder="password"><br>
+        <input type="Submit">
+    </form> -->
+    <form action="login" method="post" style="width: 350px; margin: 50px auto; padding: 25px; background: #f0f9ff; border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 123, 255, 0.2); text-align: center; font-family: Arial, sans-serif; border: 2px solid #cce7ff;">
+    {% csrf_token %}
+
+    <h2 style="color: #007bff; margin-bottom: 15px;">Dental Login</h2>
+
+    <input type="text" name="username" placeholder="Username" 
+        style="width: 90%; padding: 12px; margin: 10px 0; border: 1px solid #99c2ff; border-radius: 5px; font-size: 16px; background: #e6f2ff; 
+        outline: none; transition: 0.3s;">
+    <br>
+
+    <input type="password" name="password" placeholder="Password" 
+        style="width: 90%; padding: 12px; margin: 10px 0; border: 1px solid #99c2ff; border-radius: 5px; font-size: 16px; background: #e6f2ff; 
+        outline: none; transition: 0.3s;">
+    <br>
+
+    <input type="submit" value="Login" 
+        style="width: 95%; padding: 12px; margin-top: 15px; background: #007bff; color: white; border: none; border-radius: 5px; font-size: 18px; 
+        cursor: pointer; transition: 0.3s;">
+    
+    <p style="margin-top: 10px; font-size: 14px; color: #666;">Don't have an account? <a href="register" style="color: #007bff; text-decoration: none;">Register</a></p>
+    </form>
+
+    <div>
+        {% for message in messages %}
+        <h3> {{messages}} </h3>
+        {% endfor %}
+    </div>
+</body>
+</html>

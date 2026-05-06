@@ -1,0 +1,483 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>DentaCare - Free Bootstrap 4 Template by Colorlib</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <link href="{% static 'https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700' %}" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/open-iconic-bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/animate.css' %}">
+    
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/aos.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/ionicons.min.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery.timepicker.css' %}">
+
+    
+    <link rel="stylesheet" href="{% static 'css/flaticon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    
+	  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Denta<span>Care</span></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+	          <li class="nav-item active"><a href="about.html" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+	          <li class="nav-item"><a href="{% url 'doctors' %}" class="nav-link">Doctors</a></li>
+	          <!-- <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li> -->
+	          <li class="nav-item"><a href="{% url 'contact' %}" class="nav-link">Contact</a></li>
+            {% if user.is_authenticated %}
+            <li style="color: white;">Hello, <br>{{user.first_name}}</li>
+            <li class="nav-item"><a href="{% url 'logout' %}" class="nav-link">Logout</a></li>
+            {% else %}
+            <li class="nav-item"><a href="{% url 'register' %}" class="nav-link">Register</a></li>
+            <li class="nav-item"><a href="{% url 'login' %}" class="nav-link">Login</a></li>
+            {% endif %}
+	          <li class="nav-item cta"><a href="{% url 'contact' %}" class="nav-link" data-toggle="modal" data-target="#modalRequest"><span>Make an Appointment</span></a></li>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <section class="home-slider owl-carousel">
+      <div class="slider-item bread-item" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container" data-scrollax-parent="true">
+          <div class="row slider-text align-items-end">
+            <div class="col-md-7 col-sm-12 ftco-animate mb-5">
+              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2"><a href="index.html">Home</a></span> <span>About</span></p>
+              <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">About Us</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+		<section class="ftco-section">
+    	<div class="container">
+    		<div class="row d-md-flex">
+	    		<div class="col-md-6 ftco-animate img about-image order-md-last" style="background-image: url({% static 'images/about.jpg' %});">
+	    		</div>
+	    		<div class="col-md-6 ftco-animate pr-md-5 order-md-first">
+		    		<div class="row">
+		          <div class="col-md-12 nav-link-wrap mb-5">
+		            <div class="nav ftco-animate nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+		              <a class="nav-link active" id="v-pills-whatwedo-tab" data-toggle="pill" href="#v-pills-whatwedo" role="tab" aria-controls="v-pills-whatwedo" aria-selected="true">What we do</a>
+
+		              <a class="nav-link" id="v-pills-mission-tab" data-toggle="pill" href="#v-pills-mission" role="tab" aria-controls="v-pills-mission" aria-selected="false">Our mission</a>
+
+		              <a class="nav-link" id="v-pills-goal-tab" data-toggle="pill" href="#v-pills-goal" role="tab" aria-controls="v-pills-goal" aria-selected="false">Our goal</a>
+		            </div>
+		          </div>
+		          <div class="col-md-12 d-flex align-items-center">
+		            
+		            <div class="tab-content ftco-animate" id="v-pills-tabContent">
+
+		              <div class="tab-pane fade show active" id="v-pills-whatwedo" role="tabpanel" aria-labelledby="v-pills-whatwedo-tab">
+		              	<div>
+			                <h2 class="mb-4">We Offer High Quality Services</h2>
+			              	<p>We are committed to providing high-quality dental services with advanced technology and personalized care. From routine check-ups to specialized procedures, our experienced team ensures a comfortable and effective treatment experience. Book your appointment today for a healthier smile!</p>
+				            </div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-mission" role="tabpanel" aria-labelledby="v-pills-mission-tab">
+		                <div>
+			                <h2 class="mb-4">To Accomodate All Patients</h2>
+			              	<p>The mission of a dental clinic is to offer high-quality, compassionate dental care to patients, focusing on prevention, treatment, and education. We aims to improve oral health, enhance smiles, and ensure a positive patient experience while promoting long-term dental well-being.</p>
+				            </div>
+		              </div>
+
+		              <div class="tab-pane fade" id="v-pills-goal" role="tabpanel" aria-labelledby="v-pills-goal-tab">
+		                <div>
+			                <h2 class="mb-4">Help Our Customers Needs</h2>
+			              	<p>Our goal is to provide comprehensive oral care, including prevention, diagnosis, treatment, and maintenance of dental health. This includes addressing issues like cavities, gum disease, and tooth alignment, while promoting overall oral hygiene and helping patients maintain healthy teeth and gums.</p>
+				            </div>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+		    </div>
+    	</div>
+    </section>
+
+    <section class="ftco-section-2">
+    	<div class="container-wrap">
+      	<div class="row d-flex no-gutters">
+      		<div class="col-md-6 img" style="background-image: url({% static 'images/about-2.jpg' %});">
+      		</div>
+      		<div class="col-md-6 d-flex">
+      			<div class="about-wrap">
+      				<div class="heading-section heading-section-white mb-5 ftco-animate">
+		            <h2 class="mb-2">Dentacare with a personal touch</h2>
+		            <p>Invest in your smile, it's an asset that appreciates with time.</p>
+		          </div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Well Experience Dentist</h3>
+	      					<p>Being a dentist means being part of a profession dedicated to transforming one's smile.</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>High Technology Facilities</h3>
+	      					<p>With the power of technology, we're not just fixing teeth; we're creating lasting smiles with precision and comfort.</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Comfortable Clinics</h3>
+	      					<p>Your health is our priority, and we're here to make you feel at ease every step of the way.</p>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </section>
+
+    <section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Testimony</h2>
+            <span class="subheading">Our Happy Customer Says</span>
+          </div>
+        </div>
+        <div class="row justify-content-center ftco-animate">
+          <div class="col-md-8">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'images/p_1.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">I had an excellent experience with Dr. Akhil Rathi for my dental treatment. The clinic is equipped with state-of-the-art tools, and all necessary safety measures were meticulously followed. Dr. Rathi's friendly and professional demeanor made the treatment process smooth and stress-free. I highly recommend his services for anyone in need of dental care.</p>
+                    <p class="name">Mohd Zubair Khan</p>
+                    <!-- <span class="position">Marketing Manager</span> -->
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'images/p_2.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Dr. Uma Rathi is always helpful & very professional to discuss your issues for giving right advice. I have visited him time & again and find him always friendly to have discussed your issues for suggesting suitable treatment, if required.</p>
+                    <p class="name">Nitesh Agrahari</p>
+                    <!-- <span class="position">Interface Designer</span> -->
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'images/p_3.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Dr. Priya Mehta is a very Good Doctor. Helps you to understand the situation and advices accordingly. Nice atmosphere and helpful staff. Amongst the best dental clinic in city. Highly recommended.</p>
+                    <p class="name">Sarita Nahata</p>
+                    <!-- <span class="position">UI Designer</span> -->
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'images/p_4.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Dr. Ketaki is an amazing doctor, she is very friendly and warm towards her patients, and extremely focused on her work, the staff is also good. I will surely recommend Dr Ketaki to everyone.</p>
+                    <p class="name">Dimple Karemore</p>
+                    <!-- <span class="position">Web Developer</span> -->
+                  </div>
+                </div>
+              </div>
+              <div class="item">
+                <div class="testimony-wrap p-4 pb-5">
+                  <div class="user-img mb-5" style="background-image: url({% static 'images/p_5.jpg' %})">
+                    <span class="quote d-flex align-items-center justify-content-center">
+                      <i class="icon-quote-left"></i>
+                    </span>
+                  </div>
+                  <div class="text text-center">
+                    <p class="mb-5">Doctor Milind is very friendly and he makes patient very comfortable before starting the surgery. He is expert in his domain and treats very well. This is my go to place for any dental treatment.</p>
+                    <p class="name">Rashmi Hatwar</p>
+                    <!-- <span class="position">System Analytics</span> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url({% static 'images/bg_1.jpg' %});" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row d-flex align-items-center">
+    			<div class="col-md-3 aside-stretch py-5">
+    				<div class=" heading-section heading-section-white ftco-animate pr-md-4">
+	            <h2 class="mb-3">Achievements</h2>
+	            <p>Dentists: They may not be superheroes, but they can save your smile from villains like cavities.</p>
+	          </div>
+    			</div>
+    			<div class="col-md-9 py-5 pl-md-5">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="14">0</strong>
+		                <span>Years of Experience</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="4500">0</strong>
+		                <span>Qualified Dentist</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="4200">0</strong>
+		                <span>Happy Smiling Customer</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="320">0</strong>
+		                <span>Patients Per Year</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+	      </div>
+    	</div>
+    </section>
+
+    <footer class="ftco-footer ftco-bg-dark ftco-section">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-md-3">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">DentaCare.</h2>
+              <p>A smile is your unique accessory and pearly white teeth make it even more beautiful.</p>
+            </div>
+            <ul class="ftco-footer-social list-unstyled float-md-left float-lft ">
+              <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+              <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            </ul>
+          </div>
+          <div class="col-md-2">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Quick Links</h2>
+              <ul class="list-unstyled">
+                <li><a href="#" class="py-2 d-block">About</a></li>
+                <li><a href="#" class="py-2 d-block">Services</a></li>
+                <li><a href="#" class="py-2 d-block">Doctors</a></li>
+                <!-- <li><a href="#" class="py-2 d-block">Blog</a></li> -->
+                <li><a href="#" class="py-2 d-block">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4 pr-md-4">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/image_1.jpg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Regular visits allow your dentist to catch problems like cavities, gum disease, and oral infections</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> Jan 20, 2024</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Admin</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 15</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="block-21 mb-4 d-flex">
+                <a class="blog-img mr-4" style="background-image: url({% static 'images/image_2.jpg' %});"></a>
+                <div class="text">
+                  <h3 class="heading"><a href="#">Brushing and flossing at home are essential, but professional cleanings remove plaque and tartar</a></h3>
+                  <div class="meta">
+                    <div><a href="#"><span class="icon-calendar"></span> Sept 18, 2024</a></div>
+                    <div><a href="#"><span class="icon-person"></span> Dentist</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 18</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="ftco-footer-widget mb-4">
+            	<h2 class="ftco-heading-2">Office</h2>
+            	<div class="block-23 mb-3">
+	              <ul>
+	                <li><span class="icon icon-map-marker"></span><span class="text">Abhinav Arcade, Shradhanand Peth
+                    Square, Landmark: Opposite to Lush House Cafe, Near Abhyankar Nagar Petrol Pump Road, Nagpur</span></li>
+	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">+9122-48968621</span></a></li>
+	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">dentacare@domain.com</span></a></li>
+	              </ul>
+	            </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-12 text-center">
+
+            <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+  Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved <i class="icon-heart" aria-hidden="true"></i><a href="{% static 'https://colorlib.com' %}" target="_blank"></a>
+  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    
+  
+
+  <!-- loader -->
+  <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
+
+  <!-- Modal -->
+  <div class="modal fade" id="modalRequest" tabindex="-1" role="dialog" aria-labelledby="modalRequestLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalRequestLabel">Make an Appointment</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form method="POST" action="{% url 'make_appointment' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" required>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="date" class="form-control" name="date" required>
+                    </div>    
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <input type="time" class="form-control" name="time" required>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <textarea name="message" class="form-control" cols="30" rows="3" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Make an Appointment" class="btn btn-primary">
+            </div>
+        </form>
+          <!-- <form action="#">
+            <div class="form-group"> -->
+              <!-- <label for="appointment_name" class="text-black">Full Name</label> -->
+              <!-- <input type="text" class="form-control" id="appointment_name" placeholder="Full Name">
+            </div>
+            <div class="form-group"> -->
+              <!-- <label for="appointment_email" class="text-black">Email</label> -->
+              <!-- <input type="text" class="form-control" id="appointment_email" placeholder="Email">
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group"> -->
+                  <!-- <label for="appointment_date" class="text-black">Date</label> -->
+                  <!-- <input type="text" class="form-control appointment_date" placeholder="Date">
+                </div>    
+              </div>
+              <div class="col-md-6">
+                <div class="form-group"> -->
+                  <!-- <label for="appointment_time" class="text-black">Time</label> -->
+                  <!-- <input type="text" class="form-control appointment_time" placeholder="Time">
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="form-group"> -->
+              <!-- <label for="appointment_message" class="text-black">Message</label> -->
+              <!-- <textarea name="" id="appointment_message" class="form-control" cols="30" rows="10" placeholder="Message"></textarea>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Make an Appointment" class="btn btn-primary">
+            </div>
+          </form> -->
+        </div>
+        
+      </div>
+    </div>
+  </div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/jquery-migrate-3.0.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.easing.1.3.js' %}"></script>
+  <script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+  <script src="{% static 'js/jquery.stellar.min.js' %}"></script>
+  <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+  <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+  <script src="{% static 'js/aos.js' %}"></script>
+  <script src="{% static 'js/jquery.animateNumber.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap-datepicker.js' %}"></script>
+  <script src="{% static 'js/jquery.timepicker.min.js' %}"></script>
+  <script src="{% static 'js/scrollax.min.js' %}"></script>
+  <script src="{% static 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false' %}"></script>
+  <script src="{% static 'js/google-map.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+    
+  </body>
+</html>
